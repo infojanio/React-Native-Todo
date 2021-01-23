@@ -12,6 +12,7 @@ interface AuthContextData {
   signed: boolean;
   user: User | null;
   loading: boolean;
+
   signIn(): Promise<void>;
   signOut(): void;
 }
@@ -47,7 +48,6 @@ export const AuthProvider: React.FC = ({ children }) => {
     //console.log(response);
 
     //const { token, user } = response;
-
     setUser(response.user);
 
     //A partir do login a cada requisição será enviado o token
